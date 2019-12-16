@@ -2,11 +2,12 @@ let playerScore = 0;
 let compScore = 0;
 const rps = ['rock', 'paper', 'scissors'];
 let randomNum = Math.floor(Math.random() * 3);
+let myChoice = 'rock';
 let myChoiceUp = myChoice.toString().toUpperCase();
 
 //Lets user know to play to 5, @ 5points, scores reset.
 function weStillPlayin() {
-    if (playerScore < 5 || compScore < 5) {
+    if (playerScore < 5 && compScore < 5) {
         console.log("Keep Playing!")
     } else if (playerScore = 5) {
         console.log("You win, nice!");
@@ -19,6 +20,8 @@ function weStillPlayin() {
     };
 };
 
+console.log('Declare your choice --> myChoice = **** , then type play()');
+
 function play(myChoiceUp) {
 
     function opponent() {
@@ -26,8 +29,9 @@ function play(myChoiceUp) {
     };
     let computerChoice = opponent();
 
+
     if (myChoiceUp === 'ROCK') {
-        rock()
+        rock();
     } else if (myChoiceUp === 'PAPER') {
         paper();
     } else {
