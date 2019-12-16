@@ -3,17 +3,17 @@ let compScore = 0;
 const rps = ['rock', 'paper', 'scissors'];
 let randomNum = Math.floor(Math.random() * 3);
 
-function opponent() {
-    return rps[randomNum].toUpperCase();
-};
-let computerChoice = opponent();
-
 //let myChoice = prompt("Choose your weapon...(rock, paper or scissors)");
 
 let myChoice = "rock";
 let myChoiceUp = myChoice.toUpperCase();
 
 function play(myChoice) {
+
+    function opponent() {
+        return rps[randomNum].toUpperCase();
+    };
+    let computerChoice = opponent();
 
     if (myChoiceUp === "ROCK") {
 
@@ -27,12 +27,8 @@ function play(myChoice) {
                 compScore + ' points.');
         } else if (computerChoice === 'ROCK') {
             console.log("Draw! Try Again!");
-        } else {
-            continue;
         };
 
-    } else {
-        continue;
     };
 
     if (myChoiceUp === "SCISSORS") {
@@ -47,12 +43,8 @@ function play(myChoice) {
                 compScore + ' point.')
         } else if (computerChoice === 'SCISSORS') {
             console.log("Draw! Try Again!");
-        } else {
-            continue;
-        };
+        }
 
-    } else {
-        continue;
     };
 
     if (myChoiceUp === "PAPER") {
@@ -68,23 +60,19 @@ function play(myChoice) {
         } else if (computerChoice === 'PAPER') {
             console.log("Draw! Try Again!");
         }
-    } else {
-        continue
-    };
-
-    if (playerScore < 5 || compScore < 5) {
-        console.log("Keep Playing!")
-    } else if (playerScore = 5) {
-        console.log("You win, nice!");
-        let playerScore = 0;
-    } else {
-        console.log("Computer Wins!");
-        let computerScore = 0;
     };
 
 };
 
-
+if (playerScore < 5 || compScore < 5) {
+    console.log("Keep Playing!")
+} else if (playerScore = 5) {
+    console.log("You win, nice!");
+    let playerScore = 0;
+} else {
+    console.log("Computer Wins!");
+    let computerScore = 0;
+};
 
 /*while (playerScore < 5 || compScore < 5) {
     prompt("Choose your weapon...(rock, paper or scissors)");
