@@ -1,44 +1,46 @@
 let playerScore = 0;
 let compScore = 0;
 const rps = ['rock', 'paper', 'scissors'];
-let randomNum = Math.floor(Math.random() * 3);
-let myChoice = 'rock';
-let myChoiceUp = myChoice.toString().toUpperCase();
+var myChoiceUp;
+const rock = 'rock';
+const paper = 'paper';
+const scissors = 'scissors';
+let myChoice;
 
-//Lets user know to play to 5, @ 5points, scores reset.
+
+function getMyChoice() {
+    return myChoice = prompt('Choose your weapon');
+
+};
+
 function weStillPlayin() {
     if (playerScore < 5 && compScore < 5) {
         console.log("Keep Playing!")
     } else if (playerScore = 5) {
         console.log("You win, nice!");
-        let playerScore = 0;
-        let computerScore = 0;
-    } else {
+        playerScore = 0;
+        omputerScore = 0;
+    } else if (compScore = 5) {
         console.log("Computer Wins!");
-        let playerScore = 0;
-        let computerScore = 0;
+        playerScore = 0;
+        computerScore = 0;
     };
 };
 
-console.log('Declare your choice --> myChoice = **** , then type play()');
+function opponentChoice() {
+    let randomNum = Math.floor(Math.random() * 3);
+    return rps[randomNum].toUpperCase();
+};
 
-function play(myChoiceUp) {
-
-    function opponent() {
-        return rps[randomNum].toUpperCase();
-    };
-    let computerChoice = opponent();
+function play() {
 
 
-    if (myChoiceUp === 'ROCK') {
-        rock();
-    } else if (myChoiceUp === 'PAPER') {
-        paper();
-    } else {
-        scissors();
-    };
+    let computerChoice = opponentChoice();
+    myChoiceUp = myChoice.toUpperCase();
+
 
     //Run when I choose rock
+
     function rock() {
         if (computerChoice === "SCISSORS") {
             playerScore++;
@@ -48,7 +50,7 @@ function play(myChoiceUp) {
             console.log('Woops, your score is ' + playerScore + '. Your opponent has ' +
                 computerChoice + ' & ' +
                 compScore + ' points.');
-        } else {
+        } else if (computerChoice === "ROCK") {
             console.log("Draw! Try Again!");
         };
     };
@@ -63,7 +65,7 @@ function play(myChoiceUp) {
             console.log('Woops, your score is ' + playerScore + '. Your opponent has ' +
                 computerChoice + ' & ' +
                 compScore + ' point.')
-        } else {
+        } else if (computerChoice === "SCISSORS") {
             console.log("Draw! Try Again!");
         };
     };
@@ -78,10 +80,25 @@ function play(myChoiceUp) {
             console.log('Woops, your score is ' + playerScore + '. Your opponent has ' +
                 computerChoice + ' & ' +
                 compScore + ' point.')
-        } else {
+        } else if (computerChoice === "PAPER") {
             console.log("Draw! Try Again!");
         };
     };
 
+    if (myChoiceUp === "ROCK") {
+        rock();
+    } else if (myChoiceUp === "PAPER") {
+        paper();
+    } else if (myChoiceUp === "SCISSORS") {
+        scissors();
+    };
+
     weStillPlayin();
+
+};
+
+function start() {
+    getMyChoice();
+    opponentChoice();
+    play();
 };
