@@ -36,7 +36,7 @@ function play() {
 
 
     let computerChoice = opponentChoice();
-    myChoiceUp = myChoice.toUpperCase();
+    myChoice = myChoice.toUpperCase();
 
 
     //Run when I choose rock
@@ -85,11 +85,11 @@ function play() {
         };
     };
 
-    if (myChoiceUp === "ROCK") {
+    if (myChoice === "ROCK") {
         rock();
-    } else if (myChoiceUp === "PAPER") {
+    } else if (myChoice === "PAPER") {
         paper();
-    } else if (myChoiceUp === "SCISSORS") {
+    } else if (myChoice === "SCISSORS") {
         scissors();
     };
 
@@ -102,3 +102,7 @@ function start() {
     opponentChoice();
     play();
 };
+
+let rovi = () => {
+    
+}
