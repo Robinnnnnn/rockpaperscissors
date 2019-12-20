@@ -1,0 +1,56 @@
+body {
+    display: grid;
+    grid-template-columns: auto 80vh auto;
+    grid-template-rows: auto 40vw 20vh;
+}
+
+h1 {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    text-align: center;
+    font-size: 36px;
+    justify-content: center;
+    align-content: center;
+    margin-top: 30px;
+}
+
+#main {
+    grid-column-start: 2;
+    grid-row-start: 2;
+    justify-content: center;
+    align-content: center;
+    display: grid;
+}
+
+h1 {
+    font-family: 'Dosis';
+    font-weight: 700;
+}
+
+.btn {
+    width: 200px;
+    height: 50px;
+    margin: 20px;
+    justify-content: center;
+    align-content: center;
+    background-color: rgb(148, 130, 153);
+}
+
+#start {
+    background-color: rgb(10, 180, 10);
+}
+
+#text1,
+#text2 {
+    grid-row-start: 3;
+    grid-column-start: 2;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    font-family: 'Dosis';
+}
+
+#text2 {
+    margin-top: 40px;
+}
